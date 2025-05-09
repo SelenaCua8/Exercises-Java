@@ -35,13 +35,13 @@ class Trabajopractico {
 		
 		JOptionPane.showMessageDialog(null, "No te juzgo... o si", "Tu respuesta fue errada", JOptionPane.DEFAULT_OPTION,
 				new ImageIcon(Trabajopractico.class.getResource("/img/juzga.jpg")));
-		cont = 0;
+	
 	}
 		
 	else if(preguntaUno.equalsIgnoreCase("b")) {
 		JOptionPane.showMessageDialog(null, "No te juzgo... o si", "Tu respuesta fue errada", JOptionPane.DEFAULT_OPTION,
 				new ImageIcon(Trabajopractico.class.getResource("/img/juzga.jpg")));
-		cont = 0;
+		
 	}else if(preguntaUno.equalsIgnoreCase("c")) {
 		JOptionPane.showMessageDialog(null, "¡Siii, bailemos!", "Tu respuesta fue acertada", JOptionPane.DEFAULT_OPTION,
 				new ImageIcon(Trabajopractico.class.getResource("/img/dancing-dog.gif")));
@@ -49,10 +49,10 @@ class Trabajopractico {
 	}else if (preguntaUno.equalsIgnoreCase("d")){
 		JOptionPane.showMessageDialog(null, "Ni siquiera lo intentaste", "Mirada que juzga", JOptionPane.DEFAULT_OPTION,
 				new ImageIcon(Trabajopractico.class.getResource("/img/juzga.jpg")));
-		cont = 0;
+		
 	}else {
 		JOptionPane.showConfirmDialog(null, "Error de tipeo, lo siento pregunta perdida");
-		cont = 0;
+		
 	}
 	//SEGUNDA PREGUNTA
 		preguntaDos=(String)JOptionPane.showInputDialog(null, "¿Por qué los perros sacan la lengua y jadean?" + "\nA)Estan enojados" + "\nB)Quieren ir al baño "
@@ -62,24 +62,24 @@ class Trabajopractico {
 			
 			JOptionPane.showMessageDialog(null, "No te juzgo... o si", "Tu respuesta fue errada", JOptionPane.DEFAULT_OPTION,
 					new ImageIcon(Trabajopractico.class.getResource("/img/juzga.jpg")));
-			cont = 0;
+			
 			
 		}
 		else if(preguntaDos.equalsIgnoreCase("b")) {
 			JOptionPane.showMessageDialog(null, "No te juzgo... o si", "Tu respuesta fue errada", JOptionPane.DEFAULT_OPTION,
 					new ImageIcon(Trabajopractico.class.getResource("/img/juzga.jpg")));
-			cont = 0;
+			
 		}else if(preguntaDos.equalsIgnoreCase("c")) {
 			JOptionPane.showMessageDialog(null, "Ni siquiera lo intentaste", "Mirada que juzga", JOptionPane.DEFAULT_OPTION,
 					new ImageIcon(Trabajopractico.class.getResource("/img/juzga.jpg")));
-			cont = 0;
+			
 		}else if(preguntaDos.equalsIgnoreCase("d")) {
 			JOptionPane.showMessageDialog(null, "¡Siii, bailemos!", "Tu respuesta fue acertada", JOptionPane.DEFAULT_OPTION,
 					new ImageIcon(Trabajopractico.class.getResource("/img/dancing-dog.gif")));
 			cont++;
 		}else {
 			JOptionPane.showConfirmDialog(null, "Error de tipeo, lo siento pregunta perdida");
-			cont = 0;
+			
 		}
 		
 		//TERCERA PREGUNTA
@@ -89,13 +89,13 @@ class Trabajopractico {
 	
 	JOptionPane.showMessageDialog(null, "No te juzgo... o si", "Tu respuesta fue errada", JOptionPane.DEFAULT_OPTION,
 			new ImageIcon(Trabajopractico.class.getResource("/img/juzga.jpg")));
-	cont = 0;
+
 	
 }
 else if(preguntaTres.equalsIgnoreCase("b")) {
 	JOptionPane.showMessageDialog(null, "No te juzgo... o si", "Tu respuesta fue errada", JOptionPane.DEFAULT_OPTION,
 			new ImageIcon(Trabajopractico.class.getResource("/img/juzga.jpg")));
-	cont = 0;
+	
 }else if(preguntaTres.equalsIgnoreCase("c")) {
 	JOptionPane.showMessageDialog(null, "Siiii", "Perrito olfateador", JOptionPane.DEFAULT_OPTION,
 			new ImageIcon(Trabajopractico.class.getResource("/img/perro-oliendo.gif")));
@@ -103,11 +103,11 @@ else if(preguntaTres.equalsIgnoreCase("b")) {
 }else if(preguntaTres.equalsIgnoreCase("d")) {
 	JOptionPane.showMessageDialog(null, "No te juzgo... o si", "Tu respuesta fue errada", JOptionPane.DEFAULT_OPTION,
 			new ImageIcon(Trabajopractico.class.getResource("/img/juzga.jpg")));
-	cont = 0;
+	
 }
 else {
 	JOptionPane.showConfirmDialog(null, "Error de tipeo, lo siento pregunta perdida");
-	cont = 0;
+	
 }
 		//CUARTA PREGUNTA
 		preguntaCuatro=(String)JOptionPane.showInputDialog(null, " ¿Qué raza de perro es famosa por su lengua de color azul-negro??" + "\nA)Chow Chow" + "\nB)Dalmata "
@@ -122,18 +122,18 @@ else {
 		else if(preguntaCuatro.equalsIgnoreCase("b")) {
 			JOptionPane.showMessageDialog(null, "No te juzgo... o si", "Tu respuesta fue errada", JOptionPane.DEFAULT_OPTION,
 					new ImageIcon(Trabajopractico.class.getResource("/img/juzga.jpg")));
-			cont = 0;
+			
 		}else if(preguntaCuatro.equalsIgnoreCase("c")) {
 			JOptionPane.showMessageDialog(null, "No te juzgo... o si", "Tu respuesta fue errada", JOptionPane.DEFAULT_OPTION,
 					new ImageIcon(Trabajopractico.class.getResource("/img/juzga.jpg")));
-			cont = 0;
+			
 		}else if(preguntaCuatro.equalsIgnoreCase("d")) {
 			JOptionPane.showMessageDialog(null, "No te juzgo... o si", "Tu respuesta fue errada", JOptionPane.DEFAULT_OPTION,
 					new ImageIcon(Trabajopractico.class.getResource("/img/juzga.jpg")));
-			cont = 0;
+		
 		}else {
 			JOptionPane.showConfirmDialog(null, "Error de tipeo, lo siento pregunta perdida");
-			cont = 0;
+			
 		}
 				
 		
@@ -144,12 +144,12 @@ else {
 					
 							JOptionPane.showMessageDialog(null, "No te juzgo... o si", "Tu respuesta fue errada", JOptionPane.DEFAULT_OPTION,
 									new ImageIcon(Trabajopractico.class.getResource("/img/juzga.jpg")));
-							cont = 0;
+							
 				}
 				else if(preguntaCuatro.equalsIgnoreCase("b")) {
 					JOptionPane.showMessageDialog(null, "No te juzgo... o si", "Tu respuesta fue errada", JOptionPane.DEFAULT_OPTION,
 							new ImageIcon(Trabajopractico.class.getResource("/img/juzga.jpg")));
-					cont = 0;
+				
 				}else if(preguntaCinco.equalsIgnoreCase("c")) {
 
 					JOptionPane.showMessageDialog(null, "¡Siii, bailemos!", "Tu respuesta fue acertada", JOptionPane.DEFAULT_OPTION,
@@ -158,10 +158,10 @@ else {
 				}else if(preguntaCinco.equalsIgnoreCase("d")) {
 					JOptionPane.showMessageDialog(null, "No te juzgo... o si", "Tu respuesta fue errada", JOptionPane.DEFAULT_OPTION,
 							new ImageIcon(Trabajopractico.class.getResource("/img/juzga.jpg")));
-					cont = 0;
+				
 				}else {
 					JOptionPane.showConfirmDialog(null, "Error de tipeo, lo siento pregunta perdida");
-					cont = 0;
+				
 				}
 		//SEXTA PREGUNTA
 						preguntaSeis=(String)JOptionPane.showInputDialog(null, " ¿Cuál es una de las principales razones por las que los perros se convierten en callejeros?" + "\nA)Se escapan debido a la falta de ejercicio" +
@@ -171,7 +171,7 @@ else {
 							
 									JOptionPane.showMessageDialog(null, "No te juzgo... o si", "Tu respuesta fue errada", JOptionPane.DEFAULT_OPTION,
 											new ImageIcon(Trabajopractico.class.getResource("/img/juzga.jpg")));
-									cont = 0;
+								
 						}
 						else if(preguntaSeis.equalsIgnoreCase("b")) {
 							JOptionPane.showMessageDialog(null, "Recordá, adopta no compres", "Tu respuesta fue acertada", JOptionPane.DEFAULT_OPTION,
@@ -181,11 +181,11 @@ else {
 
 							JOptionPane.showMessageDialog(null, "No te juzgo... o si", "Tu respuesta fue errada", JOptionPane.DEFAULT_OPTION,
 									new ImageIcon(Trabajopractico.class.getResource("/img/juzga.jpg")));
-							cont = 0;
+							
 						}else if(preguntaSeis.equalsIgnoreCase("d")) {
 							JOptionPane.showMessageDialog(null, "No te juzgo... o si", "Tu respuesta fue errada", JOptionPane.DEFAULT_OPTION,
 									new ImageIcon(Trabajopractico.class.getResource("/img/juzga.jpg")));
-							cont = 0;
+						
 						}else {
 							JOptionPane.showConfirmDialog(null, "Error de tipeo, lo siento pregunta perdida");
 							cont = 0;

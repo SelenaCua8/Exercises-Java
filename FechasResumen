@@ -1,0 +1,101 @@
+1. Las 3 clases principales
+Dependiendo de qué necesites guardar, usás una u otra:
+
+LocalDate: Solo la fecha (Año, mes, día). Ideal para cumpleaños o fechas de vencimiento.
+
+LocalTime: Solo la hora (Hora, minutos, segundos, nanosegundos).
+
+LocalDateTime: Fecha y hora juntas. Ideal para cuando se registra un movimiento 
+en un sistema 
+(ej: "Se alquiló el disfraz el 30/03/2026 a las 23:10").
+
+LocalDate hoy = LocalDate.now(); // La fecha de hoy
+LocalDate cumple = LocalDate.of(2000, 10, 15); // Una fecha específica (Año, Mes, Día)
+
+Modificar fechas (¡Ojo! Son inmutables):
+Las fechas en Java no se "cambian", se crea una nueva con el cambio.
+
+
+LocalDate semanaSiguiente = hoy.plusWeeks(1); // Sumar una semana
+LocalDate mesPasado = hoy.minusMonths(1);    // Restar un mes
+
+Obtener datos sueltos:
+
+int anio = hoy.getYear();
+Month mes = hoy.getMonth(); // Devuelve el nombre del mes (MARCH)
+int dia = hoy.getDayOfMonth();
+
+3. Comparar fechas
+Esto es lo que más te van a pedir en los ejercicios (ej: "¿Ya venció el producto?").
+
+
+if (hoy.isAfter(vencimiento)) {
+    System.out.println("⚠️ El producto está vencido");
+}
+
+if (hoy.isBefore(fechaAlquiler)) {
+    System.out.println("✅ Todavía no es el día");
+    
+    4. Formatear fechas (Para que se vean lindas)
+Por defecto, Java las muestra como 2026-03-30 (formato ISO). Para pasarlo a "nuestro" formato (30/03/2026), usamos el DateTimeFormatter.
+
+Java
+DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+String fechaLinda = hoy.format(formato); 
+System.out.println(fechaLinda); // Imprime: 30/03/2026
+5. Calcular diferencias (Period y Duration)
+Period: Para diferencias en días, meses o años (fechas).
+
+Duration: Para diferencias en horas, minutos o segundos (tiempo).
+
+Java
+LocalDate hoy = LocalDate.now();
+LocalDate cumple = LocalDate.of(2026, 12, 31);
+Period faltan = Period.between(hoy, cumple);
+
+System.out.println("Faltan " + faltan.getMonths() + " meses y " + faltan.getDays() + " días.");
+
+
+
+OffsetDateTime (Fechas con Zona Horaria)
+A diferencia de LocalDateTime, esta incluye el desplazamiento (Offset)
+ respecto al meridiano de Greenwich (UTC).
+
+Para qué sirve: Para sistemas globales. Si alguien alquila un disfraz en 
+Zárate (UTC-3) y el servidor está en EE.UU. (UTC-5), necesitás saber la diferencia 
+horaria para que no se desfase el horario de entrega.
+
+
+// Ejemplo: 2026-03-30T23:15-03:00
+OffsetDateTime ahoraConGmt = OffsetDateTime.now();
+
+
+Clock (El Reloj del Sistema)
+En vez de usar now(), podés usar un objeto Clock.
+
+Para qué sirve: Es fundamental para hacer Testing. Si tenés que probar 
+qué pasa en tu sistema de disfraces cuando alguien devuelve algo un domingo a las 3 AM,
+ no vas a esperar al domingo. "Engañás" al sistema pasándole un Clock fijo con esa fecha.
+
+
+Clock relojFijo = Clock.fixed(Instant.parse("2026-12-25T10:00:00Z"), ZoneId.of("UTC"));
+LocalDate navidad = LocalDate.now(relojFijo); // Siempre va a dev
+
+
+
+TemporalAdjusters (Tu mejor amigo para cálculos)
+Esta clase es una colección de "atajos" para no tener que hacer cuentas matemáticas con los días.
+
+Para qué sirve: Para responder preguntas como: "¿Cuándo es el último día de este mes?" o "¿Cuál es el próximo lunes?".
+
+
+LocalDate hoy = LocalDate.now();
+
+// El último día del mes actual
+LocalDate ultimoDia = hoy.with(TemporalAdjusters.lastDayOfMonth());
+
+// El primer lunes del mes que viene
+LocalDate primerLunesProxMes = hoy.with(TemporalAdjusters.firstInMonth(DayOfWeek.MONDAY));
+
+// El próximo viernes (si hoy es viernes, devuelve el de la semana que viene)
+LocalDate proximoViernes = hoy.with(TemporalAdjusters.next(DayOfWeek.FRIDAY));

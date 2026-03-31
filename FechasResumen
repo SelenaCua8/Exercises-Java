@@ -97,5 +97,34 @@ LocalDate ultimoDia = hoy.with(TemporalAdjusters.lastDayOfMonth());
 // El primer lunes del mes que viene
 LocalDate primerLunesProxMes = hoy.with(TemporalAdjusters.firstInMonth(DayOfWeek.MONDAY));
 
+Instant es el "tiempo absoluto". Mientras que LocalDate es la fecha que ves en el calendario de tu 
+pared en Zárate, Instant es un punto único en la línea de tiempo del universo.
+
+Aquí tenés el resumen para que no te confundas:
+
+1. ¿Qué es exactamente? ⏱️
+Representa un instante específico, medido en segundos y nanosegundos desde el 1 de enero de 1970 
+(lo que en programación llamamos Unix Epoch). Siempre está en UTC (el horario del meridiano de Greenwich, sin zonas horarias).
+
+Formato: 2026-03-31T02:30:00.123Z (Esa Z al final significa "Zulú" o UTC).
+
+2. ¿Para qué se usa? (El uso real)
+No se usa para mostrarle la fecha al usuario (porque al usuario de Argentina le saldría con 3 horas de diferencia). 
+Se usa para máquinas:
+
+Logs del sistema: Para saber exactamente en qué microsegundo ocurrió un error.
+
+Marcas de tiempo (Timestamps): Para saber cuándo se creó un archivo o cuándo se hizo un clic en la base de datos.
+
+Medir rendimiento: Para saber cuánto tarda un proceso en correr.
+
+Java
+Instant inicio = Instant.now(); 
+// ... acá corre tu código de la lista ...
+Instant fin = Instant.now();
+
+Duration tiempoTranscurrido = Duration.between(inicio, fin);
+System.out.println("Tardó: " + tiempoTranscurrido.toMillis() + " mil
+
 // El próximo viernes (si hoy es viernes, devuelve el de la semana que viene)
 LocalDate proximoViernes = hoy.with(TemporalAdjusters.next(DayOfWeek.FRIDAY));
